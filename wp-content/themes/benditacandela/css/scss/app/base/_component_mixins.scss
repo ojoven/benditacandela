@@ -1,0 +1,72 @@
+// ==============================================
+// COMPONENT MIXINS (CUSTOM WEBCOMPONENTS)
+// ==============================================
+
+// CLEAR FIX (Fix height after floats)
+%clearfix {
+  &:after {
+    content: " ";
+    display: table;
+    clear: both;
+  }
+}
+
+// VOTES
+%votes {
+  margin: 0 auto;
+  width: 100px;
+  height: 20px;
+  background: url('../img/gral/greystar.png') repeat;
+  z-index: 5;
+
+  .voted {
+    display: block;
+    height: 20px;
+    width: 0;
+    background: url('../img/gral/yellowstar.png') repeat;
+    &.v100 { width: 100px; }
+    &.v80 { width: 80px; }
+    &.v60 { width: 60px; }
+    &.v40 { width: 40px; }
+    &.v20 { width: 20px; }
+  }
+}
+
+// UNDERLINES
+%underlines {
+
+  &:after {
+    @include effect(width, 0.5s, ease);
+    display: block;
+    position: relative;
+    content: '';
+    width: 0;
+    background: $underlineColor;
+    margin: 2px auto -2px;
+    height: 1px;
+  }
+
+  &:hover, &:focus {
+
+    &:after {
+      @include effect(width, 0.5s, ease);
+      width: 100%;
+    }
+  }
+}
+
+// ==============================================
+// MOBILE
+// ==============================================
+@include mobile {
+
+  // Clear fix extendable from mobile media queries
+  %clearfixmobile {
+    &:after {
+      content: " ";
+      display: table;
+      clear: both;
+    }
+  }
+
+}

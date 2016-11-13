@@ -1,0 +1,89 @@
+// ==============================================
+// COLORS
+// ==============================================
+
+// FIRST WE DEFINE DESCRIPTIVE COLORS
+// Color names provided by http://chir.ag/projects/name-that-color/
+// The method to create the name is: "Closest standard color" name + "Name that color" name (brown + dark ebony)
+$white: #ffffff;
+$creamFoam: #eaf7fd;
+$creamSatinLinen: #E1DECE;
+$creamQuarterSpanish: #f9f2e7;
+$creamAkaroa: #D6CBB3;
+$creamOrientalPink: #c89f8e;
+$greyWildSand: #f6f6f6;
+$greyDusty: #999;
+$greySilver: #ccc;
+$greyQuill: #E5E5E3;
+$greyCloudy: #ACA8A1;
+$brownKumera: #8d672a;
+$brownDarkEbony: #3D1D06;
+$blueRegal: #004179;
+$bluePrussian: #002d5b;
+$blueCloudBurst: #1c2941;
+$orangePomegranate: #f4531c;
+$orangeFlamingo: #f45420;
+$orangeFlamingoLight: #f26432;
+$orangeFlamingoDark: #cc4617;
+$yellowCorn: #e8ac07;
+$redTamarillo: $orangePomegranate;
+$redDarkTan: #711216;
+$redThunderbird: #CA1010;
+$black: #000;
+$blackTundora: #444;
+$greySeparator: #cccccc;
+
+
+// Gradients
+%redGradient {
+  @include bbg(top, bottom, $redTamarillo, $redDarkTan);
+}
+
+%blueGradient {
+  @include bbg(top, bottom, rgba(28, 41, 65, 1), rgba(20, 29, 46, 1));
+}
+
+%darkGradient {
+  @include bbg(top, bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+}
+
+%lightGradient {
+  @include bbg(top, bottom, rgba(255, 255, 255, 1), rgba(214, 214, 214, 1));
+}
+
+%orangeGradient {
+  @include bbg(top, bottom, $orangeFlamingo, $orangeFlamingoDark);
+}
+
+%orangeGradientInvert {
+  @include bbg(top, bottom, $orangeFlamingoDark, $orangeFlamingo);
+}
+
+
+// NOW WE DEFINE FUNCTIONS
+
+// General functions
+$mainColor: $blueRegal;
+$alternativeColor: $white;
+$blackLight: $blackTundora;
+$underlineColor: $greyDusty;
+$socialIconsBgHover: $greySilver;
+
+// Note: custom function colors are included in their belonging files
+
+
+// ==============================================
+// MOBILE
+// ==============================================
+@include mobile {
+
+  // To be extended on mobile media queries
+  %redGradientMobile {
+    @include bbg(top, bottom, $redTamarillo, $redDarkTan);
+  }
+
+  %orangeGradientMobile {
+    @include bbg(top, bottom, $orangeFlamingo, $orangeFlamingoDark);
+  }
+
+}

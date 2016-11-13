@@ -1,0 +1,4 @@
+.idea
+wp-content/themes/*/node_modules
+wp-content/themes/*/.sass-cache
+wp-config.php

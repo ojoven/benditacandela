@@ -1,0 +1,75 @@
+// ==============================================
+// HEADERS
+// ==============================================
+// Headers used in the different pages
+
+// Vars
+$defaultHeaderHeight: 275px;
+$defaultHeaderMarginTop: 160px;
+$recipeHeaderHeight: 370px;
+$defaultHeaderMobileMarginTop: 4em;
+
+// Header
+#header-top {
+
+  width: 100%;
+  display: block;
+  height: $defaultHeaderHeight;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  border-bottom: none;
+
+  // Header Content (Title and Description)
+  .content {
+    @include X-Y-50();
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    h2 { /* Styles for Header Title */ }
+    hr { /* Styles for separating bar between h2 and p (if it exists) */ }
+    p { /* Styles for Header Description */ }
+
+  }
+
+  // When Header is a single recipe
+  &.single-recipe-header-top {
+    height: $recipeHeaderHeight;
+  }
+
+  // When Header is a single collection
+  &.single-collection-header-top { }
+
+  // Styles for all headers except custom ones (single recipe)
+  // like :not(.single-recipe-header-top)
+  &.general-header { }
+
+}
+
+// We need to give margin top because to the main
+// content's headers because of the fixed top header menu
+#header-top,
+#product-scope {
+  margin-top: $defaultHeaderMarginTop;
+}
+
+#submenu {
+  width:100% !important;
+  ul {
+    width:100% !important;
+  }
+}
+// ==============================================
+// MOBILE
+// ==============================================
+@include mobile {
+
+  #header-top {
+    top: 0;
+    margin-top: $defaultHeaderMobileMarginTop;
+  }
+
+}
+

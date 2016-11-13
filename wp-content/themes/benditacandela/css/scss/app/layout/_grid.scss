@@ -1,0 +1,40 @@
+// ==============================================
+// GRID
+// ==============================================
+
+.grid {
+
+  // 2 columns
+  &.row50 {
+
+    > .container {
+      @extend %clearfix;
+      > * {
+        width: 46%;
+        float: left;
+        &:first-child {
+          margin-right: 4%;
+        }
+      }
+    }
+
+  }
+
+  // 4 columns
+  &.row50 {
+
+    > .container {
+      @extend %clearfix;
+      > * {
+        width: 24%;
+        float: left;
+        margin-right: 1%;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+
+  }
+
+}

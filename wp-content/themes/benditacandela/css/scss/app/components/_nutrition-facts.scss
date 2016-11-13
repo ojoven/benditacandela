@@ -1,0 +1,80 @@
+// ==============================================
+// NUTRITION FACTS
+// ==============================================
+// Styles applied to the nutrition facts table
+
+// Vars
+$nutritionOddColor: $creamFoam;
+
+// Table Wrapper
+.performance-facts {
+  padding: 0;
+  line-height: 1.4;
+  width: 100%;
+  max-width: 450px;
+  margin: 0;
+  float: none;
+
+  // Table
+  table {
+    border-collapse: collapse; // Remove borders on collapse
+    width: 100%;
+  }
+
+  // Header
+  .info-header {
+    @extend .bold;
+    font-size: 16px;
+    text-align: left;
+    padding-bottom: 9px;
+
+    .align-left { float: left; max-width: 66%; } // Amount per serving
+    .align-right { float: right; } // Daily Value%
+  }
+
+  // Rows
+  tbody > tr:nth-child(odd) { // Zebra like odd rows colored
+    background-color: $nutritionOddColor;
+  }
+
+  // Cells
+  tbody > tr {
+    td, th {
+      border: 0;
+      text-align: left;
+      white-space: nowrap;
+      padding: 8px;
+    }
+
+    // Bring last cell to the right (percentages)
+    td:last-child {
+      text-align: right;
+    }
+
+    // Indented Fact Children (Saturated, + Trans...)
+    .blank-cell {
+      width: 1rem;
+      border-top: 0;
+    }
+  }
+
+  // Texts
+  p, td, th {
+    @extend .light;
+    color: $blackLight;
+    font-size: 16px;
+  }
+
+}
+
+// ==============================================
+// MOBILE
+// ==============================================
+@include mobile {
+
+  // So the (Amount per serving) text doesn't overlap
+  .performance-facts .info-header .align-left {
+    width: 50%;
+  }
+
+}

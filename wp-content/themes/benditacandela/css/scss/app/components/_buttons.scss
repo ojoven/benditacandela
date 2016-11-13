@@ -1,0 +1,92 @@
+// ==============================================
+// BUTTONS
+// ==============================================
+
+// Vars
+$btnMainTextColor: $white;
+$btnMainBg: $orangePomegranate;
+$btnMainBorder: $white;
+$btnMainHoverBg: $orangeFlamingoDark;
+$btnMainHoverBorder: $orangeFlamingoDark;
+
+// GENERAL BUTTON
+.btn {
+  @extend .bold;
+  @include effect(all, 0.5s, ease);
+  display: inline-block;
+  font-size: 16px;
+  line-height: 1.2;
+  padding: 10px 25px 10px 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  @extend %orangeGradient;
+  @include box-shadow(0px 1px 1px 0px rgba(0,0,0,0.75));
+
+  // MAIN BUTTON
+  &.btn-main {
+    color: $btnMainTextColor;
+    border: 3px solid $btnMainBorder;
+
+    &:after {
+      content: '';
+      @include effect(all, 0.5s, ease);
+      left: 6px;
+      width: 11px;
+      height: 18px;
+      position: relative;
+      float:right;
+      background: url('../img/gral/white-arrow.png') 0 0;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    &:hover, &:focus {
+      border-color: $btnMainHoverBorder;
+      @extend %orangeGradientInvert;
+
+      &:after {
+        left: 12px;
+      }
+    }
+  }
+
+  // ALTERNATE BUTTON
+  &.btn-alternate {
+    // Use if alternate button
+  }
+
+}
+
+// VIEW MORE BUTTON
+// Used below the carousels (videos, recipes, etc.)
+.view-more-button {
+  margin-top: 20px;
+}
+
+#recipe-collections, #our-recipes {
+  .view-more-button {
+    margin-top: 0;
+  }
+}
+
+
+
+// ==============================================
+// MOBILE
+// ==============================================
+@include mobile {
+
+  .btn {
+
+    &.btn-main {
+      font-size: 90%;
+
+      &:after {
+        background: none;
+        display: none;
+      }
+    }
+  }
+
+}
